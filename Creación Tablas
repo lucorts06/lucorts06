@@ -1,0 +1,60 @@
+Proyecto FINAL
+
+CREACIÓN DE TABLA LIBROS
+
+CREATE TABLE Catalogo_Libros(ISBN INTEGER AUTO_INCREMENT PRIMARY KEY, Nombre VARCHAR(500) NOT NULL, Editorial VARCHAR(1000) NOT NULL, Cant_Disponibles INTEGER NOT NULL, Cant_Prestados INTEGER DEFAULT 0);
+
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('Cazadores de sombras', 'BookEt', '3');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('1984' , 'Alfaguara' , '2');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('Fahrenheit' , 'Alfaguara' , '9');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('El fin de la eternidad', 'PocketBook' , '1');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('Las estrellas, mi destino' , 'Ebook' , '3');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('Solaris', 'Gandhi', '8');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('El fin de la eternidad', 'Dragon rojo' , '5');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('Dune' , 'Dragon rojo' , '4');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('Matadero 5' , 'Lectorum' , '5');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('Ubik' , 'Dragon rojo' , '7');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('La mano izquierda de la obscuridad' , 'Alfaguara' , '6');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('Guía de la autopsia galáctico' , 'Dragon rojo' , '3');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('Neuromate' , 'Gandhi' , '4');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('El cuento de la criada' , 'Pax' , '1');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('Amanecer' , 'Praxis' , '3');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('Metro 2034' , 'Praxis', '8');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('Hyperion', 'Santillana', '9');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('Marte rojo' , 'Alianza' , '6');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('Snow crash' , 'Alfaguara' , '2');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('La historia de tu vida' , 'Dragon rojo' , '1');
+INSERT INTO Catalogo_Libros (Nombre, Editorial, Cant_Disponibles) VALUES ('El problema de los tres cuerpos' , 'Dragon rojo' , '10');
+
+
+CREACIÓN DE TABLA USUARIO
+
+CREATE TABLE Usuarios(ID_usuario INTEGER AUTO_INCREMENT PRIMARY KEY, Nombre VARCHAR(500) NOT NULL, a_paterno VARCHAR(500) NOT NULL, a_materno VARCHAR(500) NOT NULL, ID_carrera INTEGER NOT NULL, semestre INTEGER NOT NULL, fecha_nac DATE NOT NULL, correo VARCHAR(150) NOT NULL, contrasena VARCHAR(20) NOT NULL, tipo_usuario VARCHAR(5) NOT NULL);
+
+INSERT INTO Usuarios(Nombre, a_paterno, a_materno, ID_carrera, semestre, fecha_nac, correo, contrasena, tipo_usuario) VALUES('Luis', 'Cortes', 'Munoz', '2', '4', '2003-03-06', 'lucorts06@gmail.com', '1234Lcm$', 'A');
+INSERT INTO Usuarios(Nombre, a_paterno, a_materno, ID_carrera, semestre, fecha_nac, correo, contrasena, tipo_usuario) VALUES('Renata' ,'Badillo' , 'Cabrera' , '2', '4' , '2003-02-12' , 'ren.badillo03@gmail.com' , '12345@' , 'U');
+INSERT INTO Usuarios(Nombre, a_paterno, a_materno, ID_carrera, semestre, fecha_nac, correo, contrasena, tipo_usuario) VALUES('Aurora', 'Sanchez' , 'Rodriguez' , '3' , '4' , '2003-06-22' , 'emi.sanchez04@gmail.com' , '3568@' , 'A');
+INSERT INTO Usuarios(Nombre, a_paterno, a_materno, ID_carrera, semestre, fecha_nac, correo, contrasena, tipo_usuario) VALUES('Karla' , 'Obermeier' , 'Velazquez' , '3' , '4' , '2002-11-19' , 'karla.obermeier05@gmail.com' , '2678!', 'U');
+
+
+CREACIÓN DE TABLA PRESTAMOS
+
+CREATE TABLE Prestamos(ID_prestamo INTEGER AUTO_INCREMENT PRIMARY KEY, ID_usuario INTEGER NOT NULL, ISBN INTEGER NOT NULL, fecha_prestamo DATE NOT NULL, fecha_devolucion DATE NOT NULL);
+
+INSERT INTO Prestamos(ID_usuario, ISBN, fecha_prestamo, fecha_devolucion) VALUES (5, 21, CURDATE(), DATE_ADD(CURDATE(), INTERVAL 8 DAY));
+INSERT INTO Prestamos(ID_usuario, ISBN, fecha_prestamo, fecha_devolucion) VALUES (5, 20, CURDATE(), DATE_ADD(CURDATE(), INTERVAL 8 DAY));
+
+CREACIÓN DE TABLA PRESTAMOS
+
+CERATE TABLE CARRERAS
+
+CREATE TABLE Carreras(ID_carrera INTEGER AUTO_INCREMENT PRIMARY KEY, nombre_carrera VARCHAR(300) NOT NULL);
+
+INSERT INTO Carreras(nombre_carrera) VALUES ('Ciencia en Base de Datos');
+INSERT INTO Carreras(nombre_carrera) VALUES ('Ingeniería Mecatrónica');
+INSERT INTO Carreras(nombre_carrera) VALUES ('Ingeniería en Computo y Telecomunicaciones');
+INSERT INTO Carreras(nombre_carrera) VALUES ('Administración de Empresas');
+INSERT INTO Carreras(nombre_carrera) VALUES ('Derecho');
+INSERT INTO Carreras(nombre_carrera) VALUES ('Relaciones internacionales');
+INSERT INTO Carreras(nombre_carrera) VALUES ('Comunicación');
+INSERT INTO Carreras(nombre_carrera) VALUES ('Arquitectura ');
